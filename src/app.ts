@@ -13,6 +13,11 @@ app.use(cors({
 }));
 app.use(express.json());
 
+// Root endpoint
+app.get('/', (_req, res) => {
+  res.json({ message: 'Welcome to the NtechEdge API!' });
+});
+
 // Health check
 app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
